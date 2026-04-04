@@ -1,0 +1,23 @@
+body {
+  background: #f5f0e8;  
+  font-family: Georgia, serif;
+}
+
+:root { --rojo: #c0390b; }
+
+.titulo-diario   { font-size: 64px; }
+.texto-rojo      { color: var(--rojo); }
+.borde-rojo      { border-color: var(--rojo) !important; }
+.fondo-rojo      { background-color: var(--rojo) !important; }
+.fondo-rojo:hover { background-color: #a02e08 !important; }
+
+/* el titulo pero mas grande */
+.titulo-nota { font-size: 34px; line-height: 1.2; }
+
+.img-hero    { height: 320px; }
+.img-article { height: 140px; }
+
+.nav-barra { background: #1a1612; }
+.nav-barra .nav-link       { color: #ccc; font-size: 12px; }
+.nav-barra .nav-link:hover { color: white; }
+.nav-barra .nav-link.active { background-color: var(--rojo); color: white; }

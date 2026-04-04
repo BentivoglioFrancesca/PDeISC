@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto · El Sur Informa</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <div class="text-center py-4 border-bottom border-dark border-3">
+    <h1 class="titulo-diario fw-bold mb-0">
+      El Sur <span class="texto-rojo">Informa</span>
+    </h1>
+    <p class="fst-italic text-secondary mb-0">La patagonia esta en llamas</p>
+  </div>
+
+  <div class="nav-barra px-3 py-1">
+    <ul class="nav nav-pills flex-wrap justify-content-between">
+      <div class="d-flex flex-wrap">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/chubut/">Chubut</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/incendios-en-patagonia/">Incendios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/los-alerces/">Los Alerces</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/bariloche/">Bariloche</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/neuquen/">Neuquén</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-externo" href="https://www.rionegro.com.ar/tag/viedma/">Viedma</a>
+        </li>
+      </div>
+      <li class="nav-item">
+        <a class="nav-link active fondo-rojo" href="contacto.html">Contacto</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container my-5" style="max-width: 600px;">
+
+    <h2 class="fw-bold mb-1">Contacto</h2>
+    <p class="text-secondary mb-4">Completá el formulario y nos ponemos en contacto.</p>
+
+    <form id="formContacto" novalidate>
+
+      <!-- NOMBRE
+           pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+           Solo acepta letras (incluso con tildes) y espacios.
+           No acepta números ni símbolos.
+      -->
+      <div class="mb-3">
+        <label for="nombreInput" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombreInput"
+          placeholder="Juan Pérez"
+          pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+          required />
+        <div class="invalid-feedback">
+          Ingresá tu nombre. Solo se permiten letras, sin números.
+        </div>
+      </div>
+
+      <!-- TELÉFONO
+           type="tel"           → campo de teléfono
+           pattern="[0-9\+\-\s]+"  → solo acepta números, +, - y espacios
+           No acepta letras.
+      -->
+      <div class="mb-3">
+        <label for="telefonoInput" class="form-label">Teléfono</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="telefonoInput"
+          placeholder="2994567890"
+          pattern="[0-9\+\-\s]+"
+          required />
+        <div class="invalid-feedback">
+          Ingresá un teléfono válido. Solo se permiten números.
+        </div>
+      </div>
+
+      <!-- EMAIL
+           type="email" → el navegador ya valida que tenga @ y dominio
+      -->
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Correo electrónico</label>
+        <input
+          type="email"
+          class="form-control"
+          id="emailInput"
+          placeholder="nombre@ejemplo.com"
+          required />
+        <div class="invalid-feedback">Ingresá un correo válido.</div>
+      </div>
+
+      <!-- MENSAJE -->
+      <div class="mb-3">
+        <label for="mensajeInput" class="form-label">Mensaje</label>
+        <textarea
+          class="form-control"
+          id="mensajeInput"
+          rows="4"
+          placeholder="Escribí tu mensaje..."
+          required></textarea>
+        <div class="invalid-feedback">El mensaje no puede estar vacío.</div>
+      </div>
+
+      <button type="submit" class="btn fondo-rojo text-white">Enviar</button>
+
+    </form>
+
+    <div id="mensajeExito" class="alert alert-success mt-4 d-none">
+      ✓ Mensaje enviado. Te respondemos a la brevedad.
+    </div>
+
+  </div>
+
+  <footer class="bg-dark text-center text-white py-5 mt-5">
+    <h3 class="fw-bold mb-1">El Sur <span class="texto-rojo">Informa</span></h3>
+    <p class="text-secondary mb-3">Periodismo de la Patagonia.<br>Cubrimos lo que pasa en nuestras tierras.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
+      <span class="text-muted small">Río Negro S.A.</span>
+      <span class="text-muted small">Fundado el 1° de mayo de 1912</span>
+    </div>
+    <p class="text-muted small border-top border-secondary pt-3 mb-0">
+      © 2026 El Sur Informa · Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const form   = document.getElementById('formContacto');
+    const exito  = document.getElementById('mensajeExito');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.classList.add('was-validated');
+      if (!form.checkValidity()) return;
+      form.classList.add('d-none');
+      exito.classList.remove('d-none');
+    });
+  </script>
+
+</body>
+</html>
