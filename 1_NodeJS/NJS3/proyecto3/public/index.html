@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Proyecto 3 </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag">ejercicio 3</h2>
+    <p class="subtitle">contar hijos</p>
+  </header>
+
+  <nav class="top-nav">
+    <a href="#sec-mouse"   class="nav-link">Mouse</a>
+    <a href="#sec-teclado" class="nav-link">Teclado</a>
+    <a href="#sec-drag"    class="nav-link">Drag</a>
+    <a href="#sec-css"     class="nav-link">CSS</a>
+    <a href="#sec-ventana" class="nav-link">Ventana</a>
+  </nav>
+
+  <main>
+
+    <section class="inspector-panel">
+      <h3 class="comp-title"> inspector de hijos</h3>
+      <p class="inspector-hint">
+        apretas una seccion y ves cuantos hijos tiene
+      </p>
+      <div class="result-box" id="resultBox">
+        <span class="result-nombre" id="resultNombre">—</span>
+        <span class="result-count" id="resultCount">?</span>
+        <span class="result-label">hijos</span>
+      </div>
+      <ul class="children-list" id="childrenList"></ul>
+    </section>
+
+
+
+    <section class="component" id="sec-mouse" data-nombre="Eventos de Mouse">
+      <h3 class="comp-title">01 / eventos de Mouse</h3>
+      <div class="event-box" id="mouseBox">
+        <span id="mouseLabel">Interactuá con esta caja</span>
+      </div>
+      <ul class="event-log" id="mouseLog"></ul>
+    </section>
+
+    <section class="component" id="sec-teclado" data-nombre="Eventos de Teclado">
+      <h3 class="comp-title">02 / eventos de Teclado</h3>
+      <input class="key-input" id="keyInput" type="text" placeholder="Escribí algo…">
+      <div class="key-display" id="keyDisplay">—</div>
+      <ul class="event-log" id="keyLog"></ul>
+    </section>
+
+    <section class="component" id="sec-drag" data-nombre="Drag & Drop">
+      <h3 class="comp-title">03 / drag &amp; drop</h3>
+      <div class="drag-area">
+        <div class="draggable" draggable="true" id="dragItem">⬡ Arrastrame</div>
+        <div class="drop-zone" id="dropZone">Zona de destino</div>
+      </div>
+      <ul class="event-log" id="dragLog"></ul>
+    </section>
+
+    <section class="component" id="sec-css" data-nombre="Animaciones CSS">
+      <h3 class="comp-title">04 / animaciones CSS</h3>
+      <button class="btn btn--anim" id="btnAnim">Lanzar animación</button>
+      <div class="anim-ball" id="animBall"></div>
+      <ul class="event-log" id="animLog"></ul>
+    </section>
+
+    <section class="component" id="sec-ventana" data-nombre="Ventana / Resize / Scroll">
+      <h3 class="comp-title">05 / ventana</h3>
+      <div class="window-stats" id="windowStats">
+        <span>Scroll Y: <strong id="scrollY">0</strong>px</span>
+        <span>Ancho: <strong id="winW">—</strong>px</span>
+        <span>Alto: <strong id="winH">—</strong>px</span>
+      </div>
+      <ul class="event-log" id="winLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

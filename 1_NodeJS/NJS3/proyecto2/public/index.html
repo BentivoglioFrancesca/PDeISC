@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Proyecto 2 </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag"> proyecto 2</h2>
+    <p class="subtitle">Eventos DHTML</p>
+  </header>
+
+  <nav class="top-nav">
+    <a href="#comp-mouse"    class="nav-link">Mouse</a>
+    <a href="#comp-teclado"  class="nav-link">Teclado</a>
+    <a href="#comp-drag"     class="nav-link">Drag & Drop</a>
+    <a href="#comp-css"      class="nav-link">CSS Anim</a>
+    <a href="#comp-ventana"  class="nav-link">Ventana</a>
+  </nav>
+
+  <main>
+
+    <!-- COMPONENTE 1: Eventos de mouse -->
+    <section class="component" id="comp-mouse">
+      <h3 class="comp-title">01 / Eventos de Mouse</h3>
+      <div class="event-box" id="mouseBox">
+        <span id="mouseLabel">Interactuá con esta caja</span>
+      </div>
+      <ul class="event-log" id="mouseLog"></ul>
+    </section>
+
+    <!-- COMPONENTE 2: Eventos de teclado -->
+    <section class="component" id="comp-teclado">
+      <h3 class="comp-title">02 / Eventos de Teclado</h3>
+      <input class="key-input" id="keyInput" type="text" placeholder="Escribí algo…">
+      <div class="key-display" id="keyDisplay">—</div>
+      <ul class="event-log" id="keyLog"></ul>
+    </section>
+
+    <!-- COMPONENTE 3: Drag & Drop -->
+    <section class="component" id="comp-drag">
+      <h3 class="comp-title">03 / Drag &amp; Drop</h3>
+      <div class="drag-area">
+        <div class="draggable" draggable="true" id="dragItem">⬡ Arrastrame</div>
+        <div class="drop-zone" id="dropZone">Zona de destino</div>
+      </div>
+      <ul class="event-log" id="dragLog"></ul>
+    </section>
+
+    <!-- COMPONENTE 4: Animaciones CSS -->
+    <section class="component" id="comp-css">
+      <h3 class="comp-title">04 / Animaciones CSS</h3>
+      <button class="btn btn--anim" id="btnAnim">Lanzar animación</button>
+      <div class="anim-ball" id="animBall"></div>
+      <ul class="event-log" id="animLog"></ul>
+    </section>
+
+    <!-- COMPONENTE 5: Ventana / scroll / resize -->
+    <section class="component" id="comp-ventana">
+      <h3 class="comp-title">05 / Ventana</h3>
+      <div class="window-stats" id="windowStats">
+        <span>Scroll Y: <strong id="scrollY">0</strong>px</span>
+        <span>Ancho: <strong id="winW">—</strong>px</span>
+        <span>Alto: <strong id="winH">—</strong>px</span>
+      </div>
+      <ul class="event-log" id="winLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

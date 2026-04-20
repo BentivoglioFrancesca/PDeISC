@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:wght@700;900&display=swap');
+
+:root {
+  --bg:      #f5f0e8;
+  --surface: #fffdf7;
+  --border:  #d8d0be;
+  --accent:  #c0392b;
+  --accent2: #1a6b4a;
+  --text:    #1c1c1c;
+  --muted:   #888;
+  --radius:  4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+}
+
+header { text-align: center; padding: 1rem 0 0.5rem; }
+
+.lab-tag {
+  font-family: 'Fraunces', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 0.3rem;
+}
+
+/* el nav */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover { background: var(--accent); color: #fff; }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.component {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  scroll-margin-top: 1rem;
+}
+
+.comp-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+
+.event-log {
+  list-style: none;
+  margin-top: 0.8rem;
+  max-height: 120px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.event-log li {
+  font-size: 0.68rem;
+  color: var(--muted);
+  padding: 0.2rem 0;
+  border-bottom: 1px dashed #e8e0d0;
+}
+
+.event-log li span { color: var(--accent2); font-weight: 500; }
+
+/* primer com´ponente el del mouse  */
+.event-box {
+  height: 100px;
+  background: linear-gradient(135deg, #f0ebe0, #e8dfc8);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.2s;
+  user-select: none;
+}
+
+.event-box.active { background: #ffe8e5; border-color: var(--accent); }
+
+/* segundo componente el del teclado */
+.key-input {
+  width: 100%;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.key-input:focus { border-color: var(--accent); }
+
+.key-display {
+  margin-top: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent2);
+  font-family: 'Fraunces', serif;
+  min-height: 2.5rem;
+  transition: transform 0.1s;
+}
+
+/* Ctercer componente el de drag */
+.drag-area {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.draggable {
+  padding: 0.6rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  cursor: grab;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.draggable:active { cursor: grabbing; opacity: 0.7; }
+
+.drop-zone {
+  flex: 1;
+  min-height: 60px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.drop-zone.over { border-color: var(--accent2); background: #e8f5ee; }
+.drop-zone.filled { background: #e8f5ee; border-color: var(--accent2); color: var(--accent2); }
+
+/* las animaciones */
+.btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover { background: var(--accent); color: #fff; }
+
+.anim-ball {
+  width: 40px;
+  height: 40px;
+  margin-top: 1rem;
+  background: var(--accent);
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+
+@keyframes bounce {
+  0%   { transform: translateX(0) scale(1); }
+  25%  { transform: translateX(200px) scale(0.9); }
+  50%  { transform: translateX(200px) translateY(-80px) scale(1.1); }
+  75%  { transform: translateX(0) scale(0.9); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+.anim-ball.running { animation: bounce 1s ease-in-out; }
+
+/* componente 5 la ventanita */
+.window-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.window-stats strong { color: var(--accent2); }

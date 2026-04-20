@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Proyecto 4 </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag"> proyecto 4</h2>
+    <p class="subtitle"> crear y cambiar nodos </p>
+  </header>
+
+  <main>
+
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Acciones</h3>
+
+      <div class="btn-grid">
+        <button class="btn btn--create" data-idx="0">+ Crear: Mercado libre</button>
+        <button class="btn btn--create" data-idx="1">+ Crear: gitHub</button>
+        <button class="btn btn--create" data-idx="2">+ Crear: wikipedia</button>
+        <button class="btn btn--create" data-idx="3">+ Crear: youTube</button>
+        <button class="btn btn--create" data-idx="4">+ Crear: express</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="btn-grid">
+        <button class="btn btn--mod" data-attr="href">Cambiar href</button>
+        <button class="btn btn--mod" data-attr="target">Toggle target</button>
+        <button class="btn btn--mod" data-attr="textContent">Cambiar texto</button>
+        <button class="btn btn--mod" data-attr="title">Cambiar title</button>
+        <button class="btn btn--mod" data-attr="class">Cambiar clase</button>
+      </div>
+    </section>
+
+    <section class="panel panel--stage">
+      <h3 class="panel-title">nodos creados</h3>
+      <div class="link-container" id="linkContainer">
+        <p class="placeholder">Usá "Crear" para agregar enlaces</p>
+      </div>
+    </section>
+
+    <section class="panel panel--log">
+      <h3 class="panel-title"> lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
