@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 14 - reverse()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2> reverse()</h2>
+    <p>Invertir el orden de los elementos de un array</p>
+  </header>
+  <main>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 1 <span>Invertir un array de letras</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e1-orig"></div>
+      <div class="controles">
+        <input type="text" id="e1-input" placeholder="Letra" maxlength="3">
+        <button class="btn" onclick="e1Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e1Invertir()">Invertir</button>
+        <button class="btn btn--rojo" onclick="e1Reset()">Reset</button>
+      </div>
+      <div class="array-label">Invertido:</div>
+      <div class="array-visual" id="e1-inv"></div>
+      <div class="resultado" id="e1-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 2 <span>Invertir un array de números</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e2-orig"></div>
+      <div class="controles">
+        <input type="number" id="e2-input" placeholder="Agregar número">
+        <button class="btn" onclick="e2Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e2Invertir()">Invertir</button>
+        <button class="btn btn--rojo" onclick="e2Reset()">Reset</button>
+      </div>
+      <div class="array-label">Invertido:</div>
+      <div class="array-visual" id="e2-inv"></div>
+      <div class="resultado" id="e2-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 3 <span>Revertir el texto de un string</span></p>
+      <div class="controles">
+        <input type="text" id="e3-input" placeholder='Escribí un texto (ej: "hola mundo")' style="flex:1">
+        <button class="btn btn--verde" onclick="e3Revertir()">Revertir texto</button>
+      </div>
+      <div class="array-label" style="margin-top:12px">String → Array → reverse() → join():</div>
+      <div class="array-visual" id="e3-chips"></div>
+      <div class="resultado" id="e3-resultado">—</div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

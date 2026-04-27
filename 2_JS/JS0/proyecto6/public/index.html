@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> slice()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag">proyecto 6</h2>
+    <p class="subtitle">método: slice()</p>
+  </header>
+
+  <main>
+
+    <!-- EJERCICIO 1 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 1 — Copiar los primeros 3 elementos</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="slice1">slice(0, 3)</button>
+        <button class="btn btn--reset" id="reset1">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">numeros[ ] — original (no se modifica)</h3>
+      <div class="array-display" id="display-1"></div>
+    </section>
+    <section class="panel panel--result" id="result1" style="display:none">
+      <h3 class="panel-title">copia obtenida con slice(0, 3)</h3>
+      <div class="array-display" id="result-display-1"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 2 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 2 — Copia parcial de películas desde posición 2 hasta la 4</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="slice2">slice(2, 4)</button>
+        <button class="btn btn--reset" id="reset2">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">peliculas[ ] — original </h3>
+      <div class="array-display" id="display-2"></div>
+    </section>
+    <section class="panel panel--result" id="result2" style="display:none">
+      <h3 class="panel-title">copia obtenida con slice(2, 4)</h3>
+      <div class="array-display" id="result-display-2"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 3 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 3 — Copiar los últimos 3 elementos sin modificar el original</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="slice3">slice(-3)</button>
+        <button class="btn btn--reset" id="reset3">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">frutas[ ] — original (no se modifica)</h3>
+      <div class="array-display" id="display-3"></div>
+    </section>
+    <section class="panel panel--result" id="result3" style="display:none">
+      <h3 class="panel-title">copia obtenida con slice(-3)</h3>
+      <div class="array-display" id="result-display-3"></div>
+    </section>
+
+    <!-- LOG -->
+    <section class="panel panel--log">
+      <h3 class="panel-title">lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

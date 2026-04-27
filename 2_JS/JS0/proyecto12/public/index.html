@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 12 — reduce()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2> reduce() </h2>
+    <p>Reducir un array a un único valor acumulado</p>
+  </header>
+  <main>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 1 <span>Sumar todos los elementos</span></p>
+      <div class="array-label">Array de números:</div>
+      <div class="array-visual" id="e1-chips"></div>
+      <div class="controles">
+        <input type="number" id="e1-input" placeholder="Agregar número">
+        <button class="btn" onclick="e1Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e1Sumar()">Sumar todo</button>
+      </div>
+      <div class="resultado" id="e1-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 2 <span>Multiplicar todos los enteros</span></p>
+      <div class="array-label">Array de enteros:</div>
+      <div class="array-visual" id="e2-chips"></div>
+      <div class="controles">
+        <input type="number" id="e2-input" placeholder="Agregar entero">
+        <button class="btn" onclick="e2Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e2Multiplicar()">Multiplicar todo</button>
+      </div>
+      <div class="resultado" id="e2-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 3 <span>Total de precios de objetos {precio}</span></p>
+      <div class="array-label">Array de objetos {producto, precio}:</div>
+      <div class="array-visual" id="e3-chips"></div>
+      <div class="controles">
+        <input type="text" id="e3-prod" placeholder="Producto">
+        <input type="number" id="e3-precio" placeholder="Precio ($)">
+        <button class="btn" onclick="e3Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e3Total()">Calcular total</button>
+      </div>
+      <div class="resultado" id="e3-resultado">—</div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

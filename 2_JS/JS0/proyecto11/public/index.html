@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 11 — filter()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2> filter()</h2>
+    <p>Filtrar elementos de un array según una condición</p>
+  </header>
+  <main>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 1 <span> Filtrar números mayores a 10</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e1-orig"></div>
+      <div class="controles">
+        <input type="number" id="e1-input" placeholder="Agregar número">
+        <button class="btn" onclick="e1Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e1Filtrar()">Filtrar > 10</button>
+      </div>
+      <div class="array-label">Resultado filtrado:</div>
+      <div class="array-visual" id="e1-filtrado"></div>
+      <div class="resultado" id="e1-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 2 <span> Filtrar palabras con más de 5 letras</span></p>
+      <div class="array-label">Array de palabras:</div>
+      <div class="array-visual" id="e2-orig"></div>
+      <div class="controles">
+        <input type="text" id="e2-input" placeholder="Agregar palabra">
+        <button class="btn" onclick="e2Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e2Filtrar()">Filtrar (más de 5 letras)</button>
+      </div>
+      <div class="array-label">Resultado filtrado:</div>
+      <div class="array-visual" id="e2-filtrado"></div>
+      <div class="resultado" id="e2-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 3 <span>Filtrar usuarios activos</span></p>
+      <div class="array-label">Array de objetos {nombre, activo}:</div>
+      <div class="array-visual" id="e3-orig"></div>
+      <div class="controles">
+        <input type="text" id="e3-nombre" placeholder="Nombre">
+        <label style="font-size:0.82rem;display:flex;align-items:center;gap:4px">
+          <input type="checkbox" id="e3-activo"> Activo
+        </label>
+        <button class="btn" onclick="e3Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e3Filtrar()">Filtrar activos</button>
+      </div>
+      <div class="array-label">Usuarios activos:</div>
+      <div class="array-visual" id="e3-filtrado"></div>
+      <div class="resultado" id="e3-resultado">—</div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

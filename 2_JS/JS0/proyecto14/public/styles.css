@@ -1,0 +1,266 @@
+/* ========= RESET ========= */
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family: "Segoe UI", Arial, sans-serif;
+background:#f4f6f9;
+color:#2c3e50;
+padding:30px 18px;
+line-height:1.5;
+}
+
+/* ========= HEADER ========= */
+header{
+text-align:center;
+margin-bottom:35px;
+}
+
+header h2{
+font-size:clamp(1.8rem,4vw,2.4rem);
+font-weight:700;
+color:#1f2937;
+margin-bottom:8px;
+}
+
+header p{
+font-size:.95rem;
+color:#6b7280;
+}
+
+/* ========= MAIN ========= */
+main{
+max-width:900px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+/* ========= TARJETAS ========= */
+.ejercicio{
+background:#ffffff;
+border:1px solid #dbe2ea;
+border-radius:14px;
+padding:24px;
+box-shadow:0 4px 14px rgba(0,0,0,.04);
+transition:.25s;
+}
+
+.ejercicio:hover{
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+/* ========= TITULOS ========= */
+.ejercicio-titulo{
+font-size:1.05rem;
+font-weight:700;
+color:#1e3a5f;
+padding-bottom:12px;
+margin-bottom:18px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.ejercicio-titulo span{
+font-size:.8rem;
+font-weight:500;
+color:#6b7280;
+margin-left:8px;
+}
+
+.array-label{
+font-size:.75rem;
+text-transform:uppercase;
+letter-spacing:1px;
+color:#6b7280;
+margin-bottom:6px;
+}
+
+/* ========= CONTROLES ========= */
+.controles{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+align-items:center;
+margin-bottom:16px;
+}
+
+input[type="text"],
+input[type="number"]{
+flex:1;
+min-width:180px;
+padding:11px 14px;
+font-size:.95rem;
+border:1px solid #cbd5e1;
+border-radius:8px;
+background:white;
+outline:none;
+transition:.2s;
+}
+
+input:focus{
+border-color:#3b82f6;
+box-shadow:0 0 0 3px rgba(59,130,246,.12);
+}
+
+/* ========= BOTONES ========= */
+.btn{
+border:none;
+padding:11px 18px;
+border-radius:8px;
+font-size:.9rem;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+white-space:nowrap;
+}
+
+.btn:hover{
+transform:translateY(-1px);
+}
+
+.btn{
+background:#2563eb;
+color:white;
+}
+
+.btn:hover{
+background:#1d4ed8;
+}
+
+.btn--verde{
+background:#16a34a;
+}
+
+.btn--verde:hover{
+background:#15803d;
+}
+
+.btn--rojo{
+background:#dc2626;
+}
+
+.btn--rojo:hover{
+background:#b91c1c;
+}
+
+/* ========= CHIPS ========= */
+.array-visual{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:16px;
+min-height:42px;
+align-items:center;
+padding:10px 0;
+}
+
+.chip{
+background:#eff6ff;
+border:1px solid #bfdbfe;
+color:#1d4ed8;
+padding:6px 12px;
+border-radius:20px;
+font-size:.85rem;
+font-weight:600;
+}
+
+.chip.resaltado{
+background:#dcfce7;
+border-color:#86efac;
+color:#166534;
+}
+
+.chip.negativo{
+background:#f8fafc;
+border-color:#d1d5db;
+color:#9ca3af;
+}
+
+.chip.nuevo{
+background:#ecfdf5;
+border-color:#a7f3d0;
+color:#047857;
+}
+
+.chip.resultado{
+background:#fffbeb;
+border-color:#fcd34d;
+color:#92400e;
+}
+
+/* ========= RESULTADOS ========= */
+.resultado{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+border-left:4px solid #2563eb;
+border-radius:8px;
+padding:14px 16px;
+font-size:.9rem;
+line-height:1.7;
+min-height:44px;
+}
+
+.resultado.ok{
+background:#f0fdf4;
+border-left-color:#16a34a;
+}
+
+.resultado.error{
+background:#fef2f2;
+border-left-color:#dc2626;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width:768px){
+
+body{
+padding:20px 14px;
+}
+
+.ejercicio{
+padding:20px;
+}
+
+.controles{
+flex-direction:column;
+align-items:stretch;
+}
+
+input[type="text"],
+input[type="number"]{
+width:100%;
+min-width:100%;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+@media (max-width:480px){
+
+header h2{
+font-size:1.5rem;
+}
+
+.ejercicio{
+padding:16px;
+border-radius:12px;
+}
+
+.chip{
+font-size:.78rem;
+padding:5px 10px;
+}
+
+.resultado{
+font-size:.85rem;
+padding:12px;
+}
+
+}

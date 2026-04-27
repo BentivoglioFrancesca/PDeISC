@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> splice () </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag">proyecto 5</h2>
+    <p class="subtitle">método: splice()</p>
+  </header>
+
+  <main>
+
+    <!-- EJERCICIO 1 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 1 — Eliminar 2 elementos desde la posición 1</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="splice1">splice(1, 2)</button>
+        <button class="btn btn--reset" id="reset1">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">letras[ ]</h3>
+      <div class="array-display" id="display-1"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 2 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 2 — Insertá "Carlos" en la posición 1 sin eliminar nada</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="splice2">splice(1, 0, "Carlos")</button>
+        <button class="btn btn--reset" id="reset2">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">nombres[ ]</h3>
+      <div class="array-display" id="display-2"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 3 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 3 — Reemplazar 2 elementos desde la posición 2</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="splice3">splice(2, 2, "X", "Y")</button>
+        <button class="btn btn--reset" id="reset3">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">items[ ]</h3>
+      <div class="array-display" id="display-3"></div>
+    </section>
+
+    <!-- LOG -->
+    <section class="panel panel--log">
+      <h3 class="panel-title">lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

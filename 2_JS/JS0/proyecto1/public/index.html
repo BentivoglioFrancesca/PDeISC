@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> PUSH () </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag">proyecto 1</h2>
+    <p class="subtitle">método: push()</p>
+  </header>
+
+  <main>
+
+    <!-- EJERCICIO 1 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 1 — Array vacío: agregá 3 frutas con push()</h3>
+      <div class="btn-grid">
+        <button class="btn btn--create" data-ej="1" data-valor="manzana">+ manzana</button>
+        <button class="btn btn--create" data-ej="1" data-valor="banana">+ banana</button>
+        <button class="btn btn--create" data-ej="1" data-valor="naranja">+ naranja</button>
+        <button class="btn btn--reset" data-ej="1">↺ reset</button>
+      </div>
+    </section>
+
+    <section class="panel panel--stage">
+      <h3 class="panel-title">frutas[ ]</h3>
+      <div class="array-display" id="display-1">
+        <p class="placeholder">Array vacío — para agregar frutas</p>
+      </div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 2 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 2 — Agregar amigos a un array existente</h3>
+      <div class="btn-grid">
+        <button class="btn btn--create" data-ej="2" data-valor="Agustina">+ Agustina</button>
+        <button class="btn btn--create" data-ej="2" data-valor="Tomas">+ Tomas</button>
+        <button class="btn btn--create" data-ej="2" data-valor="Antonella">+ Antonella </button>
+        <button class="btn btn--reset" data-ej="2">↺ reset</button>
+      </div>
+    </section>
+
+    <section class="panel panel--stage">
+      <h3 class="panel-title">amigos[ ]</h3>
+      <div class="array-display" id="display-2"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 3 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 3 — Agrega el número solo si es mayor al último</h3>
+      <div class="btn-grid">
+        <button class="btn btn--create" data-ej="3" data-valor="5">+ 5</button>
+        <button class="btn btn--create" data-ej="3" data-valor="12">+ 12</button>
+        <button class="btn btn--create" data-ej="3" data-valor="8">+ 8</button>
+        <button class="btn btn--create" data-ej="3" data-valor="20">+ 20</button>
+        <button class="btn btn--create" data-ej="3" data-valor="3">+ 3</button>
+        <button class="btn btn--reset" data-ej="3">↺ reset</button>
+      </div>
+    </section>
+
+    <section class="panel panel--stage">
+      <h3 class="panel-title">numeros[ ]</h3>
+      <div class="array-display" id="display-3">
+        <p class="placeholder">Array vacío — solo se agrega si es mayor al último</p>
+      </div>
+    </section>
+
+    <!-- LOG COMPARTIDO -->
+    <section class="panel panel--log">
+      <h3 class="panel-title">lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

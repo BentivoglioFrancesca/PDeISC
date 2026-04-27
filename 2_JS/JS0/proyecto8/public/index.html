@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 8 — includes()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2> includes()</h2>
+    <p> Verificar si un elemento existe en un array</p>
+  </header>
+  <main>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 1 <span>¿El array contiene "admin"?</span></p>
+      <div class="array-label">Array de roles:</div>
+      <div class="array-visual" id="e1-chips"></div>
+      <div class="controles">
+        <input type="text" id="e1-input" placeholder='Escribí un rol (ej: "admin")'>
+        <button class="btn" onclick="e1Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e1Verificar()">¿Contiene "admin"?</button>
+      </div>
+      <div class="resultado" id="e1-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 2 <span>¿El array de colores contiene "verde"?</span></p>
+      <div class="array-label">Array de colores:</div>
+      <div class="array-visual" id="e2-chips"></div>
+      <div class="controles">
+        <input type="text" id="e2-input" placeholder="Escribí un color">
+        <button class="btn" onclick="e2Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e2Verificar()">¿Contiene "verde"?</button>
+      </div>
+      <div class="resultado" id="e2-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 3 <span>Verificar número antes de sumarlo</span></p>
+      <div class="array-label">Array de números:</div>
+      <div class="array-visual" id="e3-chips"></div>
+      <div class="controles">
+        <input type="number" id="e3-input" placeholder="Número a agregar">
+        <button class="btn btn--verde" onclick="e3AgregarSiNoExiste()">Agregar si no existe</button>
+      </div>
+      <div class="resultado" id="e3-resultado">—</div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> unshift() </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag">proyecto 3</h2>
+    <p class="subtitle">método: unshift()</p>
+  </header>
+
+  <main>
+
+    <!-- EJERCICIO 1 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 1 — Agregá 3 colores al principio de un array vacío</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" data-ej="1" data-valor="rojo">+ rojo al principio</button>
+        <button class="btn btn--action" data-ej="1" data-valor="verde">+ verde al principio</button>
+        <button class="btn btn--action" data-ej="1" data-valor="azul">+ azul al principio</button>
+        <button class="btn btn--reset" data-ej="1">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">colores[ ]</h3>
+      <div class="array-display" id="display-1">
+        <p class="placeholder">Array vacío — para agregar colores</p>
+      </div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 2 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 2 — Agregá una tarea urgente al principio</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" data-ej="2" data-valor=" Reunión urgente">+ reunión urgente</button>
+        <button class="btn btn--action" data-ej="2" data-valor=" Entrega inmediata">+ entrega inmediata</button>
+        <button class="btn btn--action" data-ej="2" data-valor=" Llamar al cliente">+ llamar al cliente</button>
+        <button class="btn btn--reset" data-ej="2">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">tareas[ ]</h3>
+      <div class="array-display" id="display-2"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 3 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 3 — Insertá un usuario al principio de los conectados</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" data-ej="3" data-valor="juan99">+ juan99</button>
+        <button class="btn btn--action" data-ej="3" data-valor="maria_dev">+ maria_dev</button>
+        <button class="btn btn--action" data-ej="3" data-valor="admin_root">+ admin_root</button>
+        <button class="btn btn--reset" data-ej="3">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">usuariosConectados[ ]</h3>
+      <div class="array-display" id="display-3"></div>
+    </section>
+
+    <!-- LOG -->
+    <section class="panel panel--log">
+      <h3 class="panel-title">lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

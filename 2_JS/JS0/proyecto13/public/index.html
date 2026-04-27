@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 13 — sort()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2>sort()</h2>
+    <p>Ordenar los elementos de un array</p>
+  </header>
+  <main>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 1 <span>Ordenar números de menor a mayor</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e1-orig"></div>
+      <div class="controles">
+        <input type="number" id="e1-input" placeholder="Agregar número">
+        <button class="btn" onclick="e1Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e1Ordenar()">Ordenar ↑</button>
+        <button class="btn btn--rojo" onclick="e1Reset()">Reset</button>
+      </div>
+      <div class="array-label">Ordenado:</div>
+      <div class="array-visual" id="e1-ord"></div>
+      <div class="resultado" id="e1-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 2 <span>Ordenar palabras alfabéticamente</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e2-orig"></div>
+      <div class="controles">
+        <input type="text" id="e2-input" placeholder="Agregar palabra">
+        <button class="btn" onclick="e2Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e2Ordenar()">Ordenar A→Z</button>
+        <button class="btn btn--rojo" onclick="e2Reset()">Reset</button>
+      </div>
+      <div class="array-label">Ordenado:</div>
+      <div class="array-visual" id="e2-ord"></div>
+      <div class="resultado" id="e2-resultado">—</div>
+    </div>
+    <div class="ejercicio">
+      <p class="ejercicio-titulo">Ejercicio 3 <span>Ordenar objetos {nombre, edad} por edad</span></p>
+      <div class="array-label">Array original:</div>
+      <div class="array-visual" id="e3-orig"></div>
+      <div class="controles">
+        <input type="text" id="e3-nombre" placeholder="Nombre">
+        <input type="number" id="e3-edad" placeholder="Edad" style="max-width:80px">
+        <button class="btn" onclick="e3Agregar()">Agregar</button>
+        <button class="btn btn--verde" onclick="e3Ordenar()">Ordenar por edad ↑</button>
+      </div>
+      <div class="array-label">Ordenado por edad:</div>
+      <div class="array-visual" id="e3-ord"></div>
+      <div class="resultado" id="e3-resultado">—</div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

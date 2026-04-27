@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> shift()</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="lab-tag"> SHIFT () </h2>
+    <p class="subtitle">shift()</p>
+  </header>
+
+  <main>
+
+    <!-- EJERCICIO 1 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 1 — Sacar el primer número del array</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="shift1">shift() primer número</button>
+        <button class="btn btn--reset" id="reset1">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">numeros[ ]</h3>
+      <div class="array-display" id="display-1"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 2 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 2 — Eliminar el primer mensaje del chat</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="shift2">shift() primer mensaje</button>
+        <button class="btn btn--reset" id="reset2">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">mensajes[ ]</h3>
+      <div class="array-display" id="display-2"></div>
+    </section>
+
+    <div class="divider-section"></div>
+
+    <!-- EJERCICIO 3 -->
+    <section class="panel panel--controls">
+      <h3 class="panel-title">Ej 3 — Atender al primero</h3>
+      <div class="btn-grid">
+        <button class="btn btn--action" id="shift3">shift() atender siguiente</button>
+        <button class="btn btn--reset" id="reset3">↺ reset</button>
+      </div>
+    </section>
+    <section class="panel panel--stage">
+      <h3 class="panel-title">cola[ ]</h3>
+      <div class="array-display" id="display-3"></div>
+    </section>
+    <section class="panel panel--atendido" id="atendido-panel" style="display:none">
+      <h3 class="panel-title">ahora atendiendo</h3>
+      <div class="atendido-display" id="atendido-display"></div>
+    </section>
+
+    <!-- LOG -->
+    <section class="panel panel--log">
+      <h3 class="panel-title">lugar de cambios</h3>
+      <ul class="change-log" id="changeLog"></ul>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
