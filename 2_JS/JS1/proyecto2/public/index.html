@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Formulario — Almacenaje en Arrays</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Agregar nuevo item</h1>
+    <p>Formulario con 8 campos — distintos métodos de almacenaje en arrays</p>
+  </header>
+
+  <main>
+
+    <!-- parte del formulario -->
+    <section class="card" id="seccion-form">
+      <h2 class="card-titulo">Registrar ítem</h2>
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="nombre">Nombre del artículo</label>
+          <input type="text" id="nombre" placeholder="Ej: Raqueta de tenis">
+          <span class="err" id="err-nombre"></span>
+        </div>
+
+        <div class="field">
+          <label for="categoria">Categoría</label>
+          <select id="categoria">
+            <option value="">— elegir —</option>
+            <option>Deporte</option>
+            <option>Herramienta</option>
+            <option>Electrónica</option>
+            <option>Hogar</option>
+            <option>Otro</option>
+          </select>
+          <span class="err" id="err-categoria"></span>
+        </div>
+
+        <div class="field">
+          <label for="precio">Precio ($)</label>
+          <input type="number" id="precio" placeholder="0.00" min="0" step="0.01">
+          <span class="err" id="err-precio"></span>
+        </div>
+
+        <div class="field">
+          <label for="stock">Stock (unidades)</label>
+          <input type="number" id="stock" placeholder="0" min="0">
+          <span class="err" id="err-stock"></span>
+        </div>
+
+        <div class="field">
+          <label for="marca">Marca</label>
+          <input type="text" id="marca" placeholder="Ej: Nike">
+          <span class="err" id="err-marca"></span>
+        </div>
+
+        <div class="field">
+          <label for="origen">País de origen</label>
+          <input type="text" id="origen" placeholder="Ej: Argentina">
+          <span class="err" id="err-origen"></span>
+        </div>
+
+        <div class="field">
+          <label for="disponible">Disponibilidad</label>
+          <select id="disponible">
+            <option value="">— elegir —</option>
+            <option value="si">Disponible</option>
+            <option value="no">Sin stock</option>
+            <option value="encargo">Por encargo</option>
+          </select>
+          <span class="err" id="err-disponible"></span>
+        </div>
+
+        <div class="field">
+          <label for="descripcion">Descripción breve</label>
+          <input type="text" id="descripcion" placeholder="Ej: Ideal para canchas de polvo de ladrillo">
+          <span class="err" id="err-descripcion"></span>
+        </div>
+
+      </div>
+
+      <!-- Selector de método de almacenaje -->
+      <div class="metodo-selector">
+        <p class="metodo-label">Método de almacenaje:</p>
+        <div class="metodo-btns">
+          <button class="btn-metodo active" data-metodo="push" title="Agrega al final">push()</button>
+          <button class="btn-metodo" data-metodo="unshift" title="Agrega al inicio">unshift()</button>
+          <button class="btn-metodo" data-metodo="splice" title="Inserta en posición">splice()</button>
+          <button class="btn-metodo" data-metodo="spread" title="Spread operator">spread [ ...arr ]</button>
+          <button class="btn-metodo" data-metodo="concat" title="Concatena arrays">concat()</button>
+        </div>
+        <p class="metodo-desc" id="metodo-desc">push() — agrega el nuevo elemento al <strong>final</strong> del array.</p>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn--primary" onclick="agregarItem()">Guardar ítem</button>
+        <button class="btn btn--gris" onclick="limpiarForm()">Limpiar</button>
+      </div>
+
+      <div id="resultado-form"></div>
+    </section>
+
+    <!-- VISTA DEL ARRAY (código) -->
+    <section class="card">
+      <h2 class="card-titulo">Array en memoria <span id="count-badge">0 ítems</span></h2>
+      <div class="codigo">
+        <pre id="array-code">// El array aparecerá aquí cuando agregues ítems</pre>
+      </div>
+    </section>
+
+    <!-- LISTADO DINÁMICO -->
+    <section class="card">
+      <h2 class="card-titulo">Ítems guardados</h2>
+      <div id="lista-items">
+        <p class="empty-msg">No hay ítems todavía.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

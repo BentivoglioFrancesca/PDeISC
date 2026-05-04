@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaBanco — Apertura de Cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR IZQUIERDO -->
+    <aside class="sidebar">
+
+      <div class="sidebar-hero">
+        <p class="sidebar-tag">Cuenta digital</p>
+        <h1 class="sidebar-title">Abrí tu cuenta<br><em>del banco</em></h1>
+        <p class="sidebar-desc">Completá el formulario en menos de 3 minutos y accedé al banco.</p>
+      </div>
+
+      <ul class="beneficios">
+        <li><span class="check">✓</span> Tarjeta de crédito</li>
+        <li><span class="check">✓</span> Transferencias 24/7</li>
+        <li><span class="check">✓</span> CBU</li>
+      </ul>
+
+      <!-- SELECTOR DE MÉTODO -->
+      <div class="metodo-panel">
+        <p class="metodo-panel-titulo">Método de lectura JS</p>
+        <div class="metodo-opciones">
+          <button class="metodo-btn active" data-metodo="1">
+            <span class="metodo-num">01</span>
+            <span class="metodo-nombre">getElementById</span>
+          </button>
+          <button class="metodo-btn" data-metodo="2">
+            <span class="metodo-num">02</span>
+            <span class="metodo-nombre">FormData API</span>
+          </button>
+          <button class="metodo-btn" data-metodo="3">
+            <span class="metodo-num">03</span>
+            <span class="metodo-nombre">querySelector</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+      <!-- PROGRESS BAR -->
+      <div class="progress-wrap">
+        <div class="progress-steps">
+          <div class="step active" data-step="1">
+            <div class="step-circle">1</div>
+            <span>Personal</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2">
+            <div class="step-circle">2</div>
+            <span>Contacto</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3">
+            <div class="step-circle">3</div>
+            <span>Seguridad</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <form id="form-banco" novalidate>
+
+        <!-- PASO 1 -->
+        <div class="form-step active" id="step-1">
+          <div class="step-header">
+            <h2>Datos personales</h2>
+            <p>Necesitamos tu información para crear tu cuenta.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field field--half">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="campo" data-campo="nombre" placeholder="Juan">
+              <span class="err" id="err-nombre"></span>
+            </div>
+            <div class="field field--half">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido" class="campo" data-campo="apellido" placeholder="Pérez">
+              <span class="err" id="err-apellido"></span>
+            </div>
+            <div class="field field--half">
+              <label for="dni">DNI</label>
+              <input type="text" id="dni" name="dni" class="campo" data-campo="dni" placeholder="12345678" maxlength="8">
+              <span class="err" id="err-dni"></span>
+            </div>
+            <div class="field field--half">
+              <label for="fechaNac">Fecha de nacimiento</label>
+              <input type="date" id="fechaNac" name="fechaNac" class="campo" data-campo="fechaNac">
+              <span class="err" id="err-fechaNac"></span>
+            </div>
+            <div class="field field--full">
+              <label>Tipo de cuenta</label>
+              <div class="tipo-cuenta-grid">
+                <label class="tipo-card">
+                  <input type="radio" name="tipoCuenta" value="caja-ahorro">
+                  <div class="tipo-card-inner">
+                    <span class="tipo-nombre">Caja de Ahorro</span>
+                  </div>
+                </label>
+                <label class="tipo-card">
+                  <input type="radio" name="tipoCuenta" value="cuenta-corriente">
+                  <div class="tipo-card-inner">
+                    <span class="tipo-nombre">Cuenta Corriente</span>
+                  </div>
+                </label>
+              </div>
+              <span class="err" id="err-tipoCuenta"></span>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn--next" onclick="irPaso(2)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="form-step" id="step-2">
+          <div class="step-header">
+            <h2>Datos de contacto</h2>
+            <p>Para enviarte tu CBU y tarjeta.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" class="campo" data-campo="email" placeholder="juan@mail.com">
+              <span class="err" id="err-email"></span>
+            </div>
+            <div class="field field--half">
+              <label for="telefono">Teléfono celular</label>
+              <input type="tel" id="telefono" name="telefono" class="campo" data-campo="telefono" placeholder="+54 9 223 000-0000">
+              <span class="err" id="err-telefono"></span>
+            </div>
+            <div class="field field--half">
+              <label for="ingreso">Ingreso mensual ($)</label>
+              <input type="number" id="ingreso" name="ingreso" class="campo" data-campo="ingreso" placeholder="150000" min="0">
+              <span class="err" id="err-ingreso"></span>
+            </div>
+            <div class="field field--full">
+              <label for="domicilio">Domicilio</label>
+              <input type="text" id="domicilio" name="domicilio" class="campo" data-campo="domicilio" placeholder="Av. Colón 1234, Mar del Plata">
+              <span class="err" id="err-domicilio"></span>
+            </div>
+            <div class="field field--full">
+              <label for="ocupacion">Ocupación</label>
+              <select id="ocupacion" name="ocupacion" class="campo" data-campo="ocupacion">
+                <option value="">— seleccioná —</option>
+                <option>Empleado en relación de dependencia</option>
+                <option>Autónomo / Monotributista</option>
+                <option>Profesional independiente</option>
+                <option>Empresario / Comerciante</option>
+                <option>Jubilado / Pensionado</option>
+                <option>Estudiante</option>
+                <option>Desempleado</option>
+              </select>
+              <span class="err" id="err-ocupacion"></span>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn--back" onclick="irPaso(1)">← Volver</button>
+            <button type="button" class="btn btn--next" onclick="irPaso(3)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="form-step" id="step-3">
+          <div class="step-header">
+            <h2>Seguridad de la cuenta</h2>
+            <p>Creá una clave segura para proteger tus fondos.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="usuario">Nombre de usuario</label>
+              <input type="text" id="usuario" name="usuario" class="campo" data-campo="usuario" placeholder="juanperez92" autocomplete="off">
+              <span class="err" id="err-usuario"></span>
+            </div>
+            <div class="field field--half">
+              <label for="password">Contraseña</label>
+              <div class="pass-wrap">
+                <input type="password" id="password" name="password" class="campo" data-campo="password" placeholder="Mínimo 8 caracteres">
+                <button type="button" class="toggle-pass" onclick="togglePass('password')">👁</button>
+              </div>
+              <span class="err" id="err-password"></span>
+            </div>
+            <div class="field field--half">
+              <label for="confirmPass">Confirmar contraseña</label>
+              <div class="pass-wrap">
+                <input type="password" id="confirmPass" name="confirmPass" class="campo" data-campo="confirmPass" placeholder="Repetí la clave">
+                <button type="button" class="toggle-pass" onclick="togglePass('confirmPass')">👁</button>
+              </div>
+              <span class="err" id="err-confirmPass"></span>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn--back" onclick="irPaso(2)">← Volver</button>
+            <button type="submit" class="btn btn--submit">Abrir mi cuenta</button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- PANTALLA DE ÉXITO -->
+      <div class="success-panel" id="success-panel" style="display:none">
+        <div class="success-icon">✓</div>
+        <h2 class="success-titulo">¡Cuenta abierta!</h2>
+        <p class="success-sub">Tu solicitud fue procesada correctamente.</p>
+        <div class="success-datos" id="success-datos"></div>
+        <button class="btn btn--next" onclick="nuevaSolicitud()" style="margin-top:24px">Cargar nuevo usuario</button>
+      </div>
+
+    </main>
+
+    <!-- PANEL DE USUARIOS -->
+    <aside class="panel-usuarios">
+      <h3 class="panel-usuarios-titulo">Cuentas abiertas</h3>
+      <div class="usuarios-lista" id="usuarios-lista">
+        <p class="usuarios-empty">Ninguna cuenta todavía.</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

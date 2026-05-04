@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario - Almacén de Personas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- SIDEBAR con lista -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Personas guardadas</h2>
+        <span class="badge" id="total-badge">0</span>
+      </div>
+      <div class="search-wrap">
+        <input type="text" id="buscador" placeholder="Buscar por nombre..." oninput="filtrarLista()">
+      </div>
+      <ul class="persona-lista" id="persona-lista">
+        <li class="lista-empty">Aún no hay personas guardadas.</li>
+      </ul>
+      <button class="btn btn--danger btn--full" onclick="borrarTodo()">🗑️ Borrar todo</button>
+    </aside>
+
+    <!-- MAIN: formulario -->
+    <main class="main-content">
+
+      <header>
+        <h1> Almacén de Personas</h1>
+        <p>Formulario con validación JS — datos guardados en <code>localStorage</code></p>
+      </header>
+
+      <div class="toast" id="toast"></div>
+
+      <form id="form-persona" onsubmit="guardarPersona(event)" novalidate>
+
+        <div class="section-title">Datos personales</div>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan">
+            <span class="err" id="err-nombre"></span>
+          </div>
+
+          <div class="field">
+            <label for="apellido">Apellido <span class="req">*</span></label>
+            <input type="text" id="apellido" name="apellido" placeholder="Pérez">
+            <span class="err" id="err-apellido"></span>
+          </div>
+
+          <div class="field">
+            <label for="edad">Edad <span class="req">*</span></label>
+            <input type="number" id="edad" name="edad" placeholder="25" min="0" max="120">
+            <span class="err" id="err-edad"></span>
+          </div>
+
+          <div class="field">
+            <label for="fechaNac">Fecha de nacimiento <span class="req">*</span></label>
+            <input type="date" id="fechaNac" name="fechaNac">
+            <span class="err" id="err-fechaNac"></span>
+          </div>
+
+          <div class="field">
+            <label>Sexo <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="Masculino"> Masculino
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="Femenino"> Femenino
+              </label>
+            </div>
+            <span class="err" id="err-sexo"></span>
+          </div>
+
+          <div class="field">
+            <label for="documento">N° Documento <span class="req">*</span></label>
+            <input type="text" id="documento" name="documento" placeholder="12345678" maxlength="10">
+            <span class="err" id="err-documento"></span>
+          </div>
+
+        </div>
+
+        <div class="section-title">Información adicional</div>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="estadoCivil">Estado civil <span class="req">*</span></label>
+            <select id="estadoCivil" name="estadoCivil">
+              <option value="">— elegir —</option>
+              <option>Soltero/a</option>
+              <option>Casado/a</option>
+              <option>Divorciado/a</option>
+              <option>Viudo/a</option>
+              <option>En pareja</option>
+            </select>
+            <span class="err" id="err-estadoCivil"></span>
+          </div>
+
+          <div class="field">
+            <label for="nacionalidad">Nacionalidad <span class="req">*</span></label>
+            <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Argentina">
+            <span class="err" id="err-nacionalidad"></span>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono <span class="req">*</span></label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 223 000-0000">
+            <span class="err" id="err-telefono"></span>
+          </div>
+
+          <div class="field">
+            <label for="mail">Correo electrónico <span class="req">*</span></label>
+            <input type="email" id="mail" name="mail" placeholder="juan@mail.com">
+            <span class="err" id="err-mail"></span>
+          </div>
+
+          <div class="field">
+            <label>¿Tiene hijos? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="tieneHijos" value="si" onchange="toggleHijos()"> Sí
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="tieneHijos" value="no" onchange="toggleHijos()"> No
+              </label>
+            </div>
+            <span class="err" id="err-tieneHijos"></span>
+          </div>
+
+          <div class="field" id="campo-hijos" style="display:none">
+            <label for="cantHijos">Cantidad de hijos</label>
+            <input type="number" id="cantHijos" name="cantHijos" min="1" max="20" placeholder="1">
+            <span class="err" id="err-cantHijos"></span>
+          </div>
+
+          <div class="field">
+            <label for="profesion">Profesión</label>
+            <input type="text" id="profesion" name="profesion" placeholder="Ingeniero/a">
+          </div>
+
+          <div class="field">
+            <label for="localidad">Localidad</label>
+            <input type="text" id="localidad" name="localidad" placeholder="Mar del Plata">
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary"> Guardar persona</button>
+          <button type="button" class="btn btn--gris" onclick="limpiarForm()">Limpiar</button>
+        </div>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <!-- MODAL de detalle -->
+  <div class="overlay" id="overlay" onclick="cerrarModal()"></div>
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <div id="modal-contenido"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
