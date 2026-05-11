@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NumFilter — Filtro de Números</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
+    <span class="theme-icon">☀️</span>
+  </button>
+
+  <div class="app">
+
+    <header class="app-header">
+      <p class="app-tag">Proyecto 4</p>
+      <h1 class="app-title">Filtro de <em>números</em></h1>
+      <p class="app-desc">Subí un .txt con números</p>
+    </header>
+
+    <div class="layout-grid">
+
+      <!-- UPLOAD -->
+      <section class="card card--upload">
+        <h2 class="card-titulo" style="margin-bottom:16px">Subir archivo .txt</h2>
+        <label class="dropzone" id="dropzone" for="file-input">
+          <div class="dropzone-icon">📄</div>
+          <p class="dropzone-title">Arrastrá tu archivo aquí</p>
+          <p class="dropzone-sub">o hacé clic para seleccionarlo</p>
+          <input type="file" id="file-input" accept=".txt" style="display:none">
+        </label>
+        <span class="err" id="err-archivo"></span>
+      </section>
+
+      <!-- STATS -->
+      <section class="card card--stats" id="card-stats" style="display:none">
+        <h2 class="card-titulo" style="margin-bottom:16px">Estadísticas</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-val" id="stat-total">0</div>
+            <div class="stat-label">Total leídos</div>
+          </div>
+          <div class="stat-item stat--utiles">
+            <div class="stat-val" id="stat-utiles">0</div>
+            <div class="stat-label">Útiles</div>
+          </div>
+          <div class="stat-item stat--no">
+            <div class="stat-val" id="stat-no">0</div>
+            <div class="stat-label">No cumplen</div>
+          </div>
+          <div class="stat-item stat--pct">
+            <div class="stat-val" id="stat-pct">0%</div>
+            <div class="stat-label">% útiles</div>
+          </div>
+        </div>
+        <div class="pct-bar-wrap">
+          <div class="pct-bar" id="pct-bar"></div>
+        </div>
+        <p class="pct-label" id="pct-label"></p>
+      </section>
+
+    </div>
+
+    <!-- RESULTADOS -->
+    <div id="resultados-wrap" style="display:none">
+
+      <div class="layout-grid layout-grid--results">
+
+        <!-- LISTA FILTRADA -->
+        <section class="card card--filtrados">
+          <div class="card-head">
+            <h2 class="card-titulo">Resultados</h2>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <span class="badge-util" id="badge-util">0 útiles</span>
+              <span class="badge-no" id="badge-no">0 no útiles</span>
+              <span class="orden-label">orden ascendente</span>
+            </div>
+          </div>
+          <div id="filtrados-lista" class="filtrados-lista"></div>
+        </section>
+
+        <!-- EXPORTAR -->
+        <section class="card card--export">
+          <h2 class="card-titulo" style="margin-bottom:6px">Guardar resultado</h2>
+          <p class="export-desc" style="margin-bottom:16px">Guardá el resultado en el servidor o descargalo como .txt.</p>
+
+          <div class="export-btns">
+            <button class="btn btn--server" onclick="guardarEnServidor()">
+              Guardar en servidor <span class="btn-icon">💾</span>
+            </button>
+            <button class="btn btn--export" onclick="exportarResultado()">
+              Descargar .txt <span class="btn-icon">↓</span>
+            </button>
+          </div>
+          <span class="server-msg" id="msg-servidor"></span>
+
+          <div style="margin-top:20px">
+            <button class="btn btn--ghost btn--sm" onclick="resetear()">← Cargar otro archivo</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

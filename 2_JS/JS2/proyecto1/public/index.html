@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NumPad — Ingreso de Números</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
+    <span class="theme-icon">☀️</span>
+  </button>
+
+  <div class="app">
+
+    <header class="app-header">
+      <p class="app-tag">Proyecto 1</p>
+      <h1 class="app-title">Ingreso de <em>números</em></h1>
+      <p class="app-desc">Cargá entre 10 y 20 números para convertirlo en un archivo .txt</p>
+    </header>
+
+    <div class="layout-grid">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-left">
+
+        <!-- INPUT -->
+        <section class="card">
+          <div class="card-head">
+            <h2 class="card-titulo">Agregar número</h2>
+            <div class="counter-wrap">
+              <span id="counter">0</span>
+              <span class="counter-sep">/</span>
+              <span class="counter-max">20</span>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <input
+              type="number"
+              id="numero-input"
+              class="numero-input"
+              placeholder="Escribí un número..."
+              autocomplete="off"
+            >
+            <button class="btn btn--add" id="btn-agregar" onclick="agregarNumero()">
+              Agregar <span class="btn-icon">+</span>
+            </button>
+          </div>
+          <span class="err" id="err-numero"></span>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <span class="progress-label" id="progress-label">0 de 10 mínimos</span>
+        </section>
+
+        <!-- EXPORT (aparece cuando hay >= 10) -->
+        <section class="card card--export" id="card-export" style="display:none">
+          <h2 class="card-titulo" style="margin-bottom:6px">¡Lista completa!</h2>
+          <p class="export-desc">Tenés <strong id="export-count">0</strong> números cargados.</p>
+
+          <div class="export-btns">
+            <button class="btn btn--server" onclick="guardarEnServidor()">
+              Guardar en servidor <span class="btn-icon">💾</span>
+            </button>
+            <button class="btn btn--export" onclick="exportarTxt()">
+              Descargar .txt <span class="btn-icon">↓</span>
+            </button>
+          </div>
+          <span class="server-msg" id="msg-servidor"></span>
+        </section>
+
+      </div>
+
+      <!-- COLUMNA DERECHA: lista -->
+      <section class="card col-right">
+        <div class="card-head">
+          <h2 class="card-titulo">Lista cargada</h2>
+          <button class="btn btn--ghost btn--sm" onclick="limpiarTodo()" id="btn-limpiar" style="display:none">
+            Limpiar todo
+          </button>
+        </div>
+        <div id="numeros-lista" class="numeros-lista">
+          <p class="empty-msg">Todavía no agregaste ningún número.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
