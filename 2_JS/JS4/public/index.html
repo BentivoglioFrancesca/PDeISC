@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJ4 — API propia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-icon">🗄️</div>
+    <div>
+      <h1>API propia</h1>
+      <p>Datos servidos por nuestro propio server.js</p>
+    </div>
+    <span class="badge-ej">EJ 04</span>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <p class="card-title">Endpoint</p>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        /api/alumnos
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Carrera</th>
+              <th>Año</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-body">
+            <tr><td colspan="5" class="empty">Cargando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="json-label">Respuesta JSON cruda</p>
+      <pre class="json-block" id="json-crudo">Cargando...</pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
