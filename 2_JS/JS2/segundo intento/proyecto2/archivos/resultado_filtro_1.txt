@@ -1,0 +1,9 @@
+// Resultado del filtro — números que empiezan y terminan con el mismo dígito
+// Total de útiles: 5
+// Ordenados ascendente
+
+22
+44
+66
+222
+333

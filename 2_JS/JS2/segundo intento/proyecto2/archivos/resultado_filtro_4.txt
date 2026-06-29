@@ -1,0 +1,7 @@
+// Resultado del filtro — números que empiezan y terminan con el mismo dígito
+// Total de útiles: 3
+// Ordenados ascendente
+
+44
+4554
+4354354

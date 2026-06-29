@@ -1,0 +1,5 @@
+// Resultado del filtro — números que empiezan y terminan con el mismo dígito
+// Total de útiles: 1
+// Ordenados ascendente
+
+44554
