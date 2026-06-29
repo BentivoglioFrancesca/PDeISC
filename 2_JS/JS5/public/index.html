@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlumnosDB</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="topbar__icon">🎓</span>
+      <h1 class="topbar__title">AlumnosDB</h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+      <span id="themeIcon">☀️</span>
+    </button>
+  </header>
+
+  <main class="main">
+
+    <section class="card form-card">
+      <h2 class="card__title">Agregar alumno</h2>
+      <div class="form">
+        <div class="form__group">
+          <label class="form__label" for="nombre">Nombre</label>
+          <input class="form__input" type="text" id="nombre" placeholder="Ej: Lucía" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="apellido">Apellido</label>
+          <input class="form__input" type="text" id="apellido" placeholder="Ej: Fernández" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="edad">Edad</label>
+          <input class="form__input" type="number" id="edad" placeholder="Ej: 20" min="1" max="99" />
+        </div>
+        <button class="btn btn--primary" id="btnAgregar">Agregar alumno</button>
+        <p class="form__feedback" id="feedback"></p>
+      </div>
+    </section>
+
+    <section class="card table-card">
+      <h2 class="card__title">Listado de alumnos</h2>
+      <div class="table-wrapper">
+        <table class="table" id="tablaAlumnos">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+            </tr>
+          </thead>
+          <tbody id="tablaBody">
+            <tr><td colspan="4" class="table__empty">Cargando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>AlumnosDB </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
