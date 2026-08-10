@@ -1,0 +1,61 @@
+.hola-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1.75rem, 5vw, 3rem);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px var(--shadow);
+  animation: fadeUp 0.5s ease;
+}
+
+.hola-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.75rem;
+}
+
+.hola-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.75rem);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.hola-highlight {
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hola-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-soft);
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 380px) {
+  .hola-card {
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

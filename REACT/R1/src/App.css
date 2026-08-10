@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --text: #1c1b1f;
+  --text-soft: #55534f;
+  --accent-start: #6d28d9;
+  --accent-end: #06b6d4;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: rgba(20, 20, 20, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg: #12111a;
+  --surface: #1b1a26;
+  --text: #f2f0f8;
+  --text-soft: #a8a5b8;
+  --accent-start: #a78bfa;
+  --accent-end: #22d3ee;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 1.5rem;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-end);
+  outline-offset: 2px;
+}

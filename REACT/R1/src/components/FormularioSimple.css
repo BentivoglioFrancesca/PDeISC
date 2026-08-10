@@ -1,0 +1,137 @@
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px var(--shadow);
+  animation: fadeUp 0.5s ease;
+}
+
+.form-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.75rem;
+}
+
+.form-titulo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 1.75rem);
+  margin: 0 0 1.25rem;
+  line-height: 1.25;
+}
+
+.form-highlight {
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form-formulario {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.form-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.form-input:focus-visible {
+  outline: 2px solid var(--accent-end);
+  outline-offset: 1px;
+}
+
+.form-error {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin: 0 0 0.75rem;
+}
+
+.form-btn-enviar {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  transition: transform 0.15s ease;
+}
+
+.form-btn-enviar:hover {
+  transform: translateY(-1px);
+}
+
+.form-bienvenida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-subtitulo {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+
+.form-btn-secundario {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+}
+
+.form-btn-secundario:hover {
+  border-color: var(--accent-end);
+  color: var(--text);
+}
+
+@media (max-width: 380px) {
+  .form-card {
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

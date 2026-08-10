@@ -1,0 +1,76 @@
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px var(--shadow);
+  animation: fadeUp 0.5s ease;
+}
+
+.tarjeta-avatar-wrap {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+}
+
+.tarjeta-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  display: block;
+}
+
+.tarjeta-nombre {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  margin: 0 0 0.4rem;
+}
+
+.tarjeta-apellido {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.tarjeta-profesion {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: transparent;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 380px) {
+  .tarjeta {
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+  .tarjeta-avatar-wrap {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

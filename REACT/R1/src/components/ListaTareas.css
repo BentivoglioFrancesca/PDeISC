@@ -1,0 +1,174 @@
+.tareas-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 20px 40px var(--shadow);
+  animation: fadeUp 0.5s ease;
+}
+
+.tareas-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.tareas-titulo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  margin: 0 0 1.25rem;
+}
+
+.tareas-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tareas-input {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.tareas-input:focus-visible {
+  outline: 2px solid var(--accent-end);
+  outline-offset: 1px;
+}
+
+.tareas-btn-agregar {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0 1.1rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  transition: transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.tareas-btn-agregar:hover {
+  transform: translateY(-1px);
+}
+
+.tareas-vacio {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.tareas-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.tareas-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.tareas-check-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.tareas-check-wrap input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tareas-check-custom {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--text-soft);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.tareas-check-wrap input:checked + .tareas-check-custom {
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  border-color: transparent;
+}
+
+.tareas-texto {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tareas-item.completada .tareas-texto {
+  text-decoration: line-through;
+  color: var(--text-soft);
+}
+
+.tareas-btn-eliminar {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+
+.tareas-btn-eliminar:hover {
+  color: #ef4444;
+}
+
+@media (max-width: 380px) {
+  .tareas-card {
+    border-radius: 16px;
+    padding: 1.1rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
