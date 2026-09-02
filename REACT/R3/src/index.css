@@ -1,0 +1,245 @@
+/* index.css
+   Sistema de diseño con identidad propia de biblioteca: verde de
+   encuadernación, bronce, papel envejecido y un "sello" de fecha tipo
+   tarjeta de préstamo, en vez de un degradado genérico. Variables de
+   tema (día/noche), tipografía, layout de estante + contenido. */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root[data-tema='claro'] {
+  --papel: #ece7dc;
+  --papel-tarjeta: #f5f2e9;
+  --tinta: #21261f;
+  --tinta-suave: #5b5f52;
+  --linea: #d8d0bd;
+  --estante: #2f4f3e;       /* fondo del panel lateral */
+  --estante-texto: #f5f2e9; /* texto sobre el panel lateral */
+  --verde: #2f4f3e;         /* botones primarios */
+  --verde-oscuro: #1d3229;  /* hover de botones primarios */
+  --bronce: #a97c34;
+  --vino: #7a2e2e;
+  --sombra: rgba(33, 38, 31, 0.08);
+}
+
+:root[data-tema='oscuro'] {
+  --papel: #14170f;
+  --papel-tarjeta: #1c211c;
+  --tinta: #e9e4d3;
+  --tinta-suave: #a8a896;
+  --linea: #333a30;
+  --estante: #0e1712;       /* más oscuro que el fondo: sigue leyéndose como panel */
+  --estante-texto: #e9e4d3;
+  --verde: #6fa98b;         /* botones primarios: verde claro, con contraste sobre fondo oscuro */
+  --verde-oscuro: #85bfa0;  /* hover: se aclara en vez de oscurecerse */
+  --bronce: #d8b463;
+  --vino: #e08585;
+  --sombra: rgba(0, 0, 0, 0.45);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background: var(--papel);
+  color: var(--tinta);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Estante lateral --- */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--estante);
+  color: var(--estante-texto);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-placa {
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 2px solid var(--bronce);
+}
+
+.sidebar-placa h4 {
+  margin: 0 0 0.35rem;
+  color: var(--estante-texto);
+  letter-spacing: 0.02em;
+}
+
+.sidebar-texto-suave {
+  color: var(--estante-texto);
+  opacity: 0.75;
+}
+
+.sidebar-cuerpo {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Sello de fecha, como el sello de vencimiento de una ficha de préstamo */
+.fecha-hoy {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--estante-texto);
+  border: 1px solid var(--bronce);
+  padding: 0.15rem 0.5rem;
+  transform: rotate(-1.5deg);
+  text-transform: capitalize;
+}
+
+.nav-link {
+  color: var(--estante-texto);
+  opacity: 0.85;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  background: transparent;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.nav-link:hover {
+  background: rgba(245, 242, 233, 0.12);
+  opacity: 1;
+}
+
+.nav-link.active {
+  background: var(--bronce);
+  color: var(--estante);
+  opacity: 1;
+  font-weight: 600;
+}
+
+.contenido {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem;
+}
+
+/* --- Tarjeta de acceso, como una ficha perforada de biblioteca --- */
+.auth-card {
+  max-width: 380px;
+  margin: 4rem auto 0;
+  padding: 2rem 2rem 1.75rem;
+  background: var(--papel-tarjeta);
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  box-shadow: 0 12px 28px var(--sombra);
+  position: relative;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+}
+
+/* --- Listas: líneas finas en vez de tarjetas idénticas con sombra --- */
+.table {
+  color: var(--tinta);
+  background: transparent;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  border-bottom: 2px solid var(--verde) !important;
+  color: var(--tinta);
+  background: transparent;
+}
+
+.table td, .table th {
+  border-color: var(--linea) !important;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(169, 124, 52, 0.08);
+}
+
+.form-control, .form-select {
+  background: var(--papel-tarjeta);
+  color: var(--tinta);
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bronce);
+  box-shadow: 0 0 0 3px rgba(169, 124, 52, 0.2);
+}
+
+.btn {
+  border-radius: 3px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: var(--verde);
+  border-color: var(--verde);
+}
+
+.btn-primary:hover {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+
+.btn-outline-danger, .btn-danger {
+  --bs-btn-color: var(--vino);
+  --bs-btn-border-color: var(--vino);
+  --bs-btn-hover-bg: var(--vino);
+  --bs-btn-hover-border-color: var(--vino);
+  --bs-btn-active-bg: var(--vino);
+  --bs-btn-active-border-color: var(--vino);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--tinta-suave);
+  --bs-btn-border-color: var(--linea);
+  --bs-btn-hover-bg: var(--tinta-suave);
+  --bs-btn-hover-border-color: var(--tinta-suave);
+}
+
+.badge.bg-success { background-color: var(--verde) !important; }
+.badge.bg-secondary { background-color: var(--tinta-suave) !important; }
+.badge.bg-warning { background-color: var(--bronce) !important; color: var(--verde-oscuro) !important; }
+
+/* Responsive: el estante pasa a barra superior en pantallas chicas */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .sidebar-cuerpo .nav.flex-column {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+  .contenido {
+    padding: 1.25rem;
+  }
+}

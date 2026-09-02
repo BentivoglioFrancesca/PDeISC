@@ -1,0 +1,19 @@
+// api.js
+// Instancia central de Axios. Agrega automáticamente el token JWT
+// (guardado en localStorage) a cada pedido, si existe.
+
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:4000/api',
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('biblioteca_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;
