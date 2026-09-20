@@ -1,0 +1,20 @@
+.ingreso-social { margin-top: 1.5rem; }
+.ingreso-social-separador { display: flex; align-items: center; gap: .85rem; margin: 0 0 1rem; color: var(--tinta-suave); font-size: .78rem; }
+.ingreso-social-separador::before, .ingreso-social-separador::after { content: ''; height: 1px; flex: 1; background: var(--linea); }
+.ingreso-social-separador span { white-space: nowrap; }
+.ingreso-social-botones { display: grid; gap: .7rem; }
+.ingreso-social-boton { position: relative; display: flex; align-items: center; justify-content: center; gap: .7rem; width: 100%; min-height: 48px; padding: .7rem 2.5rem; border: 1px solid transparent; border-radius: 10px; font: 600 .85rem 'Work Sans', sans-serif; line-height: 1.4; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.ingreso-social-icono { position: absolute; left: 1rem; display: flex; width: 21px; height: 21px; }
+.ingreso-social-icono svg { width: 100%; height: 100%; }
+.ingreso-social-google { background: #fff; color: #30343b; border-color: #dadce0; }
+.ingreso-social-github { background: #24292f; color: #fff; border-color: #424951; }
+.ingreso-social-discord { background: #5865f2; color: #fff; border-color: #5865f2; }
+.ingreso-social-google:hover:not(:disabled) { background: #f5f7fa; }
+.ingreso-social-github:hover:not(:disabled) { background: #343b44; }
+.ingreso-social-discord:hover:not(:disabled) { background: #4752c4; }
+.ingreso-social-boton:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 10px var(--sombra); }
+.ingreso-social-boton:focus-visible { outline: 3px solid var(--bronce); outline-offset: 3px; }
+.ingreso-social-boton:disabled { opacity: .65; cursor: wait; }
+.ingreso-social-spinner { position: absolute; right: .8rem; width: 15px; height: 15px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: ingreso-social-girar .8s linear infinite; }
+@keyframes ingreso-social-girar { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ingreso-social-boton { transition: none; } .ingreso-social-boton:hover:not(:disabled) { transform: none; } .ingreso-social-spinner { animation: none; } }
